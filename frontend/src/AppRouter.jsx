@@ -13,9 +13,9 @@ function AppRouter() {
         <Route path="/" element={<Home />} />
         <Route path="/movies/list/by-genre" element={<ListMovies />} />
         <Route path="/tv/list/by-genre" element={<ListSeries />} />
-        <Route path="/:type/list" element={<ListContentAll />} />
         <Route path="/details/:type/:id" element={<ContentDetails />} />
         <Route path="/person/:id" element={<ActorDetails />} />
+        <Route path="/:type/list" element={<ListContentAll />} />
       </Routes>
     </Router>
   );
