@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Manrope-reg';
+  src: url('../fonts/Manrope-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Manrope-med';
+  src: url('../fonts/Manrope-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Manrope-sm';
+  src: url('../fonts/Manrope-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Manrope-b';
+  src: url('../fonts/Manrope-Bold.ttf') format('truetype');
+}

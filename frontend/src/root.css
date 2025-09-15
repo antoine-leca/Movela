@@ -1,0 +1,80 @@
+@import url('./assets/css/fonts.css');
+
+:root {
+    --main-reg: 'Manrope-reg';
+    --main-med: 'Manrope-med';
+    --title-semibold: 'Manrope-sm';
+    --title-bold: 'Manrope-b';
+
+    --bg-main: #1A1623;
+    --bg-sec: #0E0C11;
+    --primary-color: #FFAA2B;
+    --cta-color: #FFAA2B;
+    --cta-hover: #FFC85C;
+    --new-films: #3CE6B0;
+    --text-color: #F0E9FF;
+    --grey-color: #A69CB2;
+}
+
+html {
+    scrollbar-color: #FFAA2B #1A1623;
+    scrollbar-width: thin;
+}
+
+.main-font-r {
+    font-family: var(--main-reg);
+}
+
+.main-font-m {
+    font-family: var(--main-med);
+}
+
+.title-font-sm {
+    font-family: var(--title-semibold);
+}
+
+.title-font-b {
+    font-family: var(--title-bold);
+}
+
+.bg-main {
+    background-color: var(--bg-main);
+}
+
+.cta-custom {
+    background-color: var(--cta-color);
+    color: white;
+} .cta-custom:hover {
+    background-color: var(--cta-hover);
+}
+.links-nav {
+    color: var(--cta-color);
+    text-decoration: none;
+    margin-right: 20px;
+    position: relative;
+    background-size: 200% 100%;
+    background-position: -100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+    padding: 10px 0; 
+    background-image: linear-gradient(
+        to right,
+        #FFC85C,
+        #FFC85C 50%,
+        #FFAA2B 50%
+        );
+} .links-nav::before {
+        content: '';
+        background: #f0b000;
+        display: block;
+        position: absolute;
+        bottom: 5px;  
+        left: 0;
+        width: 0;
+        height: 2px;
+        transition: all 0.3s ease-in-out;
+} .links-nav:hover {
+        background-position: 0;
+}
