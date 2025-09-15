@@ -91,7 +91,7 @@ const ListContentAll = () => {
 
     // Effect pour fetch le contenu selon le type et la page
     useEffect(() => {
-        if (type === 'movies') {
+        if (type === 'movies' || type === 'movie') {
             fetchMovies(currentPage);
         } else if (type === 'series' || type === 'tv') {
             fetchSeries(currentPage);
