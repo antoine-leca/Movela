@@ -43,9 +43,10 @@ const ContentDetails = () => {
         setError(null);
 
         try {
-            const endpoint = type === 'movie' 
-                ? `${API_BASE_URL}/movies/${id}`
-                : `${API_BASE_URL}/series/${id}`;
+            const endpoint =
+                type === 'movie' || type === 'movies'
+                    ? `${API_BASE_URL}/movies/${id}`
+                    : `${API_BASE_URL}/series/${id}`;
 
             const response = await fetch(endpoint);
             
