@@ -1,10 +1,10 @@
-import { useEffect, useState, useCallback } from 'react';
-import { useNavigate, useParams, useLocation } from 'react-router-dom';
-import { useScrollToTop } from '../hooks/useScrollToTop';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import CustomDivider from '../components/CustomDivider';
+import { useCallback, useEffect, useState } from 'react';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import CarouselCards from '../components/CarouselCards';
+import CustomDivider from '../components/CustomDivider';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import { useScrollToTop } from '../hooks/useScrollToTop';
 
 const ContentDetails = () => {
     useScrollToTop();
@@ -100,7 +100,7 @@ const ContentDetails = () => {
                         </div>
                         <button 
                             onClick={() => navigate(-1)}
-                            className="btn btn-primary mt-4"
+                            className="btn btn-warning mt-4"
                         >
                             Retour
                         </button>
@@ -120,7 +120,7 @@ const ContentDetails = () => {
                         <p className="text-gray-300">Aucun contenu trouvé.</p>
                         <button 
                             onClick={() => navigate(-1)}
-                            className="btn btn-primary mt-4"
+                            className="btn btn-warning mt-4"
                         >
                             Retour
                         </button>
@@ -380,9 +380,6 @@ const ContentDetails = () => {
                         ) : (
                             <div className="bg-gray-800 rounded-lg p-6 text-center">
                                 <p className="text-gray-400">Aucun commentaire pour le moment...</p>
-                                <p className="text-gray-500 text-sm mt-2">
-                                    Debug: Type de reviews = {typeof reviews}, Length = {reviews?.length || 'undefined'}
-                                </p>
                             </div>
                         )}
                     </section>

@@ -1,13 +1,13 @@
-
-import React, { useState, useEffect } from 'react';
-import { useParams, useSearchParams } from 'react-router-dom';
-import { useScrollToTop } from '../hooks/useScrollToTop';
-import getAPI from '../getAPI';
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import CustomDivider from '../components/CustomDivider';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import getAPI from '../getAPI';
+import { useScrollToTop } from '../hooks/useScrollToTop';
 
 const ListContentAll = () => {
+    const navigate = useNavigate();
     useScrollToTop();
     const { type } = useParams(); // 'movies' ou 'tv'
     const [searchParams, setSearchParams] = useSearchParams();
@@ -195,7 +195,18 @@ const ListContentAll = () => {
                 <section>
                     <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-6 p-4 justify-items-center'>
                         {content.map(item => (
-                            <div key={item.id} className="card w-[250px] h-[375px] relative shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+                            <div
+                                key={item.id}
+                                className="card w-[250px] h-[375px] relative shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+                                onClick={() => navigate(`/details/${type === 'movies' ? 'movie' : 'tv'}/${item.id}`)}
+                                tabIndex={0}
+                                role="button"
+                                onKeyDown={e => {
+                                    if (e.key === 'Enter' || e.key === ' ') {
+                                        navigate(`/details/${type === 'movies' ? 'movie' : 'tv'}/${item.id}`);
+                                    }
+                                }}
+                            >
                                 <div className="card-body h-full flex z-10 flex-col justify-end p-4">
                                     <h2 className="text-center text-lg font-bold text-white drop-shadow-lg line-clamp-2">
                                         {getItemTitle(item)}

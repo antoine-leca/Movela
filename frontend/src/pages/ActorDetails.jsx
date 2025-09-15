@@ -73,7 +73,7 @@ const ActorDetails = () => {
                         </div>
                         <button 
                             onClick={() => navigate(-1)}
-                            className="btn btn-primary mt-4"
+                            className="btn btn-warning mt-4"
                         >
                             Retour
                         </button>
@@ -93,7 +93,7 @@ const ActorDetails = () => {
                         <p className="text-gray-300">Aucun acteur trouvé.</p>
                         <button 
                             onClick={() => navigate(-1)}
-                            className="btn btn-primary mt-4"
+                            className="btn btn-warning mt-4"
                         >
                             Retour
                         </button>
