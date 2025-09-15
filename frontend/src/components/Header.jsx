@@ -34,7 +34,7 @@ const Header = () => {
                     </div>
                     {/* logo */}
                     <div className='h-full flex-1 justify-start lg:w-6/10 flex lg:justify-center items-center'>
-                        <a className="mx-2 px-2 w-fit h-fit" href="/"><img className='w-24' src="/src/assets/img/logo.png" alt="" /></a>
+                        <a className="mx-2 px-2 w-fit h-fit" href="/"><img className='w-24' src="/logo.png" alt="" /></a>
                     </div>
                     {/* Barre de recherche */}
                     <SearchBar className="hidden lg:flex" />
