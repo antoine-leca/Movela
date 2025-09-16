@@ -4,6 +4,7 @@ import CarouselCards from '../components/CarouselCards';
 import CustomDivider from '../components/CustomDivider';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import getAPI from '../getAPI';
 import { useScrollToTop } from '../hooks/useScrollToTop';
 
 const ContentDetails = () => {
@@ -15,8 +16,6 @@ const ContentDetails = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [expandedComments, setExpandedComments] = useState(new Set());
-
-    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api/';
     
     const API_IMG_URL = 'https://image.tmdb.org/t/p/original';
 
@@ -44,34 +43,22 @@ const ContentDetails = () => {
         setError(null);
 
         try {
-            const endpoint =
-                type === 'movie' || type === 'movies'
-                    ? `${API_BASE_URL}/movies/${id}`
-                    : `${API_BASE_URL}/series/${id}`;
-
-            const response = await fetch(endpoint);
-            
-            if (!response.ok) {
-                throw new Error(`Erreur ${response.status}: ${response.statusText}`);
-            }
-
-            const data = await response.json();
-            console.log('🎬 Données reçues:', data);
-            
-            // Structure des données selon le type
-            if (type === 'movie') {
-                setContent(data);
+            let response;
+            if (type === 'movie' || type === 'movies') {
+                response = await getAPI.getMovieDetails(id);
             } else {
-                setContent(data);
+                response = await getAPI.getSeriesDetails(id);
             }
+            const data = response.data;
+            setContent(data);
         } catch (err) {
             console.error('❌ Erreur lors du fetch:', err);
-            setError(err.message);
+            setError(err.message || 'Erreur lors du chargement');
         } finally {
             setLoading(false);
         }
-    }, [type, id, API_BASE_URL]);
-
+    }, [type, id]);
+    
     useEffect(() => {
         fetchContentDetails();
     }, [fetchContentDetails]);

@@ -22,53 +22,53 @@ const getAPI = {
     
     // Films populaires pour le hero carousel
     getNowPlayingMovies: () => 
-        api.get('/api/movies/now-playing'),
+        api.get('movies/now-playing'),
     
     // Films populaires pour la page d'accueil
     getPopularMovies: () => 
-        api.get('/api/movies/popular'),
+        api.get('movies/popular'),
     
     // Tous les films avec pagination
     getAllMovies: (page = 1, limit = 24) => 
-        api.get('/api/movies/all', { params: { page, limit } }),
+        api.get('movies/all', { params: { page, limit } }),
     
     // Films par multiples genres
     getMoviesByGenres: () => 
-        api.get('/api/movies/by-genres'),
+        api.get('movies/by-genres'),
     
     // Détails d'un film
     getMovieDetails: (id) => 
-        api.get(`/api/movies/${id}`),
+        api.get(`movies/${id}`),
 
     // ===== SÉRIES =====
     
     // Séries populaires
     getPopularSeries: () => 
-        api.get('/api/series/popular'),
+        api.get('series/popular'),
     
     // Toutes les séries avec pagination
     getAllSeries: (page = 1, limit = 24) => 
-        api.get('/api/series/all', { params: { page, limit } }),
+        api.get('series/all', { params: { page, limit } }),
     
     // Séries par multiples genres
     getSeriesByGenres: () => 
-        api.get('/api/series/by-genres'),
+        api.get('series/by-genres'),
     
     // Détails d'une série
     getSeriesDetails: (id) => 
-        api.get(`/api/series/${id}`),
+        api.get(`series/${id}`),
 
     // ===== RECHERCHE =====
     
     // Recherche globale films/séries
     searchMultiMedia: (query) => 
-        api.get('/api/search', { params: { q: query } }),
+        api.get('search', { params: { q: query } }),
 
     // ===== PERSONNES =====
     
     // Détails d'une personne et ses crédits
     getPersonDetails: (id) => 
-        api.get(`/api/person/${id}`)
+        api.get(`person/${id}`)
 };
 
 export default getAPI;

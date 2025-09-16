@@ -4,6 +4,7 @@ import CarouselCards from '../components/CarouselCards';
 import CustomDivider from '../components/CustomDivider';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import getAPI from '../getAPI';
 import { useScrollToTop } from '../hooks/useScrollToTop';
 
 const ActorDetails = () => {
@@ -15,7 +16,6 @@ const ActorDetails = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const API_BASE_URL = 'http://localhost:3000/api';
     const API_IMG_URL = 'https://image.tmdb.org/t/p/original';
 
     const fetchActorDetails = useCallback(async () => {
@@ -25,23 +25,15 @@ const ActorDetails = () => {
         setError(null);
 
         try {
-            const endpoint = `${API_BASE_URL}/person/${id}`;
-            const response = await fetch(endpoint);
-            
-            if (!response.ok) {
-                throw new Error(`Erreur ${response.status}: ${response.statusText}`);
-            }
-
-            const data = await response.json();
-            console.log('👤 Données acteur reçues:', data);
-            setActor(data);
+            const response = await getAPI.getPersonDetails(id);
+            setActor(response.data);
         } catch (err) {
             console.error('❌ Erreur lors du fetch:', err);
-            setError(err.message);
+            setError(err.message || 'Erreur lors du chargement');
         } finally {
             setLoading(false);
         }
-    }, [id, API_BASE_URL]);
+    }, [id]);
 
     useEffect(() => {
         fetchActorDetails();
