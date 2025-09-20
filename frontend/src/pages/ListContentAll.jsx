@@ -109,7 +109,7 @@ const ListContentAll = () => {
 
     // Fonction pour obtenir le titre de la page
     const getPageTitle = () => {
-        return (type === 'movies') ? 'Tous les Films' : 'Toutes les Séries';
+        return (type === 'movies') ? 'Films' : 'Séries';
     };
 
     const generatePageNumbers = () => {
@@ -184,7 +184,7 @@ const ListContentAll = () => {
         <div>
             <Header />
             <main className='min-h-[80vh]'>
-                <CustomDivider title={getPageTitle()}>{type}</CustomDivider>
+                <CustomDivider title={getPageTitle()} align="start">{getPageTitle()}</CustomDivider>
                 
                 {/* Informations de pagination EN HAUT */}
                 <div className="text-center text-sm opacity-70 mb-4 mt-4">
@@ -197,7 +197,7 @@ const ListContentAll = () => {
                         {content.map(item => (
                             <div
                                 key={item.id}
-                                className="card w-[250px] h-[375px] relative shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+                                className="card w-[167px] h-[250px] md:w-[250px] md:h-[375px] relative shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer"
                                 onClick={() => navigate(`/details/${type === 'movies' ? 'movie' : 'tv'}/${item.id}`)}
                                 tabIndex={0}
                                 role="button"

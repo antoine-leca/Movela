@@ -68,7 +68,7 @@ function ListMovies() {
             <main className="min-h-[80vh]">
                 {genresWithMovies.map((genreData, index) => (
                     <div key={index} className="mb-8">
-                        <CustomDivider color="primary">{genreData.genre}</CustomDivider>
+                        <CustomDivider color="primary" align="start">{genreData.genre}</CustomDivider>
                         <CarouselCards 
                             items={genreData.movies} 
                             type="movie"

@@ -57,7 +57,7 @@ const CarouselCards = ({
                                     {getItemTitle(item)}
                                 </h2>
                                 <div className="card-actions justify-center">
-                                    {item.vote_average && (
+                                    {item.vote_average > 0 && (
                                         <div className="bg-main text-white px-2 py-1 rounded-lg text-sm flex">
                                             ⭐ {item.vote_average.toFixed(1)}
                                         </div>

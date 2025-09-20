@@ -11,7 +11,7 @@ const Footer = () => {
             <nav>
                 <div className="grid grid-flow-col gap-4">
                 
-                <a href='https://github.com/antoine-leca' target="_blank">
+                <a href='https://github.com/antoine-leca/Movela' target="_blank">
                     <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"

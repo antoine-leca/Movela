@@ -68,7 +68,7 @@ function ListSeries() {
             <main className="min-h-[80vh]">
                 {/* Carousel Séries Populaires en premier */}
                 <div className="mb-8">
-                    <CustomDivider color="primary">Séries populaires</CustomDivider>
+                    <CustomDivider color="primary" align="start">Séries populaires</CustomDivider>
                     <CarouselCards 
                         items={popularSeries} 
                         type="tv"
@@ -79,7 +79,7 @@ function ListSeries() {
                 {/* Carousels par genre */}
                 {genresWithSeries.map((genreData, index) => (
                     <div key={index} className="mb-8">
-                        <CustomDivider color="primary">{genreData.genre}</CustomDivider>
+                        <CustomDivider color="primary" align="start">{genreData.genre}</CustomDivider>
                         <CarouselCards 
                             items={genreData.series} 
                             type="tv"

@@ -227,12 +227,12 @@ const ContentDetails = () => {
                                     
                                     {/* Synopsis */}
                                     <div className="mb-6">
-                                        <CustomDivider color="primary">synopsis</CustomDivider>
+                                        <CustomDivider color="primary" align="start">synopsis</CustomDivider>
                                         <p className="text-gray-300 leading-relaxed">{overview}</p>
                                     </div>
 
                                     <div className='mb-8'>
-                                        <CustomDivider color="primary">équipe technique</CustomDivider>
+                                        <CustomDivider color="primary" align="start">équipe technique</CustomDivider>
                                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                                             {director && (
                                                 <div>
@@ -266,7 +266,7 @@ const ContentDetails = () => {
                     {/* Section acteurs */}
                     {mainCast.length > 0 && (
                         <section className="mb-8">
-                            <CustomDivider color="primary">Acteurs principaux</CustomDivider>
+                            <CustomDivider color="primary" align="start">Acteurs principaux</CustomDivider>
                             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 px-4 pt-4">
                                 {mainCast.map(actor => (
                                     <div 
@@ -297,7 +297,7 @@ const ContentDetails = () => {
                     {/* Section recommandations */}
                     {recommendations.length > 0 && (
                         <section className="">
-                            <CustomDivider color="primary">Recommandations</CustomDivider>
+                            <CustomDivider color="primary" align="start">Recommandations</CustomDivider>
                             <CarouselCards 
                                 items={recommendations}
                                 type={type}
@@ -308,7 +308,7 @@ const ContentDetails = () => {
 
                     {/* Section commentaires (placeholder) */}
                     <section className="mb-8">
-                        <CustomDivider color="primary">Commentaires</CustomDivider>
+                        <CustomDivider color="primary" align="start">Commentaires</CustomDivider>
                         
                         {reviews && reviews.length > 0 ? (
                             <div className="space-y-4">

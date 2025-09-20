@@ -63,6 +63,12 @@ const getAPI = {
     // Recherche globale films/séries
     searchMultiMedia: (query) => 
         api.get('search', { params: { q: query } }),
+    searchMovies: (query, page = 1) =>
+        api.get('/search/movies', { params: { q: query, page } }),
+    searchSeries: (query, page = 1) =>
+        api.get('/search/series', { params: { q: query, page } }),
+    searchPersons: (query, page = 1) =>
+        api.get('/search/persons', { params: { q: query, page } }),
 
     // ===== PERSONNES =====
     

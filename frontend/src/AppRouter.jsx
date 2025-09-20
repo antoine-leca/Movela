@@ -5,6 +5,8 @@ import ListSeries from "./pages/ListSeriesByGenre";
 import ContentDetails from "./pages/ContentDetails";
 import ActorDetails from "./pages/ActorDetails";
 import ListContentAll from "./pages/ListContentAll";
+import SearchResults from "./pages/SearchResults";
+
 
 function AppRouter() {
   return (
@@ -16,6 +18,7 @@ function AppRouter() {
         <Route path="/details/:type/:id" element={<ContentDetails />} />
         <Route path="/person/:id" element={<ActorDetails />} />
         <Route path="/:type/list" element={<ListContentAll />} />
+        <Route path="/search" element={<SearchResults />} />
       </Routes>
     </Router>
   );

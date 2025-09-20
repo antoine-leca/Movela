@@ -192,7 +192,7 @@ const ActorDetails = () => {
                                     
                                     {/* Biographie */}
                                     <div className="mb-6">
-                                        <CustomDivider color="primary">Biographie</CustomDivider>
+                                        <CustomDivider color="primary" align="start">Biographie</CustomDivider>
                                         <p className="text-gray-300 leading-relaxed whitespace-pre-line">{biography}</p>
                                     </div>
                                 </div>
@@ -211,7 +211,7 @@ const ActorDetails = () => {
                     {/* Section films */}
                     {sortedMovies.length > 0 && (
                         <section className="mb-8">
-                            <CustomDivider color="primary">Films</CustomDivider>
+                            <CustomDivider color="primary" align="start">Films</CustomDivider>
                             <CarouselCards 
                                 items={sortedMovies}
                                 type="movie"
@@ -223,7 +223,7 @@ const ActorDetails = () => {
                     {/* Section séries */}
                     {sortedTvShows.length > 0 && (
                         <section className="mb-8">
-                            <CustomDivider color="primary">Séries TV</CustomDivider>
+                            <CustomDivider color="primary" align="start">Séries TV</CustomDivider>
                             <CarouselCards 
                                 items={sortedTvShows}
                                 type="tv"
@@ -235,7 +235,7 @@ const ActorDetails = () => {
                     {/* Section filmographie complète */}
                     {(movieCredits.length > 10 || tvCredits.length > 10) && (
                         <section className="mb-8">
-                            <CustomDivider color="primary">Filmographie complète</CustomDivider>
+                            <CustomDivider color="primary" align="start">Filmographie complète</CustomDivider>
                             <div className="bg-gray-800 rounded-lg p-6">
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                                     {/* Films Timeline */}

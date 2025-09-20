@@ -211,7 +211,7 @@ function Home() {
                         </div>
                     ))}
                 </section>
-                <CustomDivider color="primary">Films</CustomDivider>
+                <CustomDivider color="primary" align="start">Films</CustomDivider>
                 <CarouselCards 
                     items={popularMovies} 
                     type="movie"
@@ -221,7 +221,7 @@ function Home() {
                     <a className='cta-custom px-3 py-2 rounded' href="/movies/list">voir tout</a>
                 </div>
                 
-                <CustomDivider color="primary">Séries</CustomDivider>
+                <CustomDivider color="primary" align="start">Séries</CustomDivider>
                 <CarouselCards 
                     items={popularSeries} 
                     type="tv"
