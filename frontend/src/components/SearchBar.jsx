@@ -11,7 +11,7 @@ const SearchBar = ({ className = "" }) => {
 
     // Fonction pour rechercher des films/séries/personnes
     const searchMovies = async (query) => {
-        if (!query || query.length < 2) {
+        if (!query) {
             setSuggestions([]);
             return;
         }
@@ -248,7 +248,7 @@ const SearchBar = ({ className = "" }) => {
             )}
 
             {/* Message quand aucun résultat */}
-            {showSuggestions && searchTerm.length >= 2 && suggestions.length === 0 && !isLoading && (
+            {showSuggestions && searchTerm.length > 0 && suggestions.length === 0 && !isLoading && (
                 <div className="absolute top-full left-0 right-0 mt-1 bg-(--primary-color) rounded-lg shadow-lg z-50 p-4 text-center text-base-content/70">
                     Aucun résultat trouvé
                 </div>

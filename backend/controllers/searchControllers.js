@@ -7,8 +7,8 @@ export const searchMultiMedia = async (req, res) => {
     const API_KEY = process.env.TMDB_API_KEY;
     const { q } = req.query;
 
-    if (!q || q.length < 2) {
-        console.log('❌ Requête trop courte ou vide');
+    if (!q) {
+        console.log('❌ Requête vide');
         return res.json({ results: [] });
     }
 
@@ -46,7 +46,7 @@ export const searchMovies = async (req, res) => {
     const API_KEY = process.env.TMDB_API_KEY;
     const { q, page = 1 } = req.query;
 
-    if (!q || q.length < 2) {
+    if (!q) {
         return res.json({ results: [], total_pages: 1 });
     }
 
@@ -74,7 +74,7 @@ export const searchSeries = async (req, res) => {
     const API_KEY = process.env.TMDB_API_KEY;
     const { q, page = 1 } = req.query;
 
-    if (!q || q.length < 2) {
+    if (!q) {
         return res.json({ results: [], total_pages: 1 });
     }
 
@@ -102,7 +102,7 @@ export const searchPersons = async (req, res) => {
     const API_KEY = process.env.TMDB_API_KEY;
     const { q, page = 1 } = req.query;
 
-    if (!q || q.length < 2) {
+    if (!q) {
         return res.json({ results: [], total_pages: 1 });
     }
 

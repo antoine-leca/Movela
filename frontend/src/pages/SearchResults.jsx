@@ -50,14 +50,12 @@ const SearchResults = () => {
     }, [searchParams]);
 
     useEffect(() => {
-        if (!query || query.length < 2) {
+        if (!query) {
             setResults([]);
             setLoading(false);
             setTotalPages(1);
             return;
         }
-        setLoading(true);
-        setError(null);
 
         // call API selon le filtre selectionné
         let apiCall;
