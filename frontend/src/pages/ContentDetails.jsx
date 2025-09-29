@@ -171,7 +171,7 @@ const ContentDetails = () => {
                             {/* Détails du contenu */}
                             <div className="lg:w-2/3">
                                 <div className="mb-6">
-                                    <CustomDivider color="primary" className='text-4xl mb-8'>{title}</CustomDivider>
+                                    <h1 className="text-3xl font-bold mb-8 text-warning break-words text-center">{title}</h1>
                                     
                                     {/* Genres */}
                                     {movieData.genres && movieData.genres.length > 0 && (

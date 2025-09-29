@@ -143,7 +143,7 @@ const ActorDetails = () => {
                             {/* Détails de l'acteur */}
                             <div className="lg:w-2/3">
                                 <div className="mb-6">
-                                    <CustomDivider color="primary" className='text-4xl mb-8'>{name}</CustomDivider>
+                                    <h1 className="text-3xl font-bold mb-8 text-warning break-words text-center">{name}</h1>
                                     
                                     {/* Informations personnelles */}
                                     <div className="mb-6 space-y-3">
