@@ -23,7 +23,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors({
-  origin: ['https://movela.vercel.app', 'http://localhost:5173', 'https://api.movela.aleca.dev'],
+  origin: ['https://movela.vercel.app', 'http://localhost:5173', 'https://movela.aleca.dev'],
   credentials: true
 }));
 
